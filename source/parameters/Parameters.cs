@@ -13,7 +13,7 @@ class Parameters {
 
     // selections method - parameters
     public readonly TournamentMethod TOURNAMENT_METHOD = TournamentMethod.BEST_RANDOM;
-    public readonly CrossoverMethod CROSSOVER_METHOD = CrossoverMethod.TWO_POINT;
+    public readonly CrossoverMethod CROSSOVER_METHOD = CrossoverMethod.ONE_POINT_NORMAL;
 
 
     public enum TournamentMethod {
@@ -21,6 +21,6 @@ class Parameters {
     }
 
     public enum CrossoverMethod {
-        ONE_POINT, TWO_POINT
+        ONE_POINT, TWO_POINT, ONE_POINT_NORMAL
     }
 }

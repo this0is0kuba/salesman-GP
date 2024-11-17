@@ -47,6 +47,9 @@ class MainGP {
                     if(parameters.CROSSOVER_METHOD == Parameters.CrossoverMethod.TWO_POINT)
                         children = ChromosomesOperations.twoPointCrossover(firstParent, secondParent);
 
+                    if(parameters.CROSSOVER_METHOD == Parameters.CrossoverMethod.ONE_POINT_NORMAL)
+                        children = ChromosomesOperations.onePointCrossoverNormal(firstParent, secondParent);
+
                     if(children[0].Fitness < currentBest.Fitness) 
                         currentBest = children[0];
 
