@@ -16,7 +16,7 @@ class FitnessHelper {
 
         bool hasDuplicates = false;
 
-        if(parameters.CROSSOVER_METHOD == Parameters.CrossoverMethod.ONE_POINT_NORMAL) {
+        if(parameters.CROSSOVER_METHOD == Parameters.CrossoverMethod.ONE_POINT_NORMAL || parameters.CROSSOVER_METHOD == Parameters.CrossoverMethod.TWO_POINT_NORMAL) {
 
             HashSet<int> seen = new HashSet<int>();
 

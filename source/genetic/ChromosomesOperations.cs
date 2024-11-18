@@ -28,6 +28,36 @@ class ChromosomesOperations {
         return children;
     }
 
+    public static Individual[] twoPointCrossoverNormal(Individual firstParent, Individual secondParent) {
+
+        int totalDepth = firstParent.Cities.Length;
+
+        int firstCutPoint = random.Next(totalDepth);
+        int secondCutPoint = random.Next(firstCutPoint + 1, totalDepth + 1);
+
+        int[] newCities1 = new int[totalDepth];
+        int[] newCities2 = new int[totalDepth];
+
+        // copy the first array
+        Array.Copy(firstParent.Cities, 0, newCities1, 0, firstCutPoint);
+        Array.Copy(secondParent.Cities, firstCutPoint, newCities1, firstCutPoint, secondCutPoint - firstCutPoint);
+        Array.Copy(firstParent.Cities, secondCutPoint, newCities1, secondCutPoint, totalDepth - secondCutPoint);
+
+        // copy the second array
+        Array.Copy(secondParent.Cities, 0, newCities1, 0, firstCutPoint);
+        Array.Copy(firstParent.Cities, firstCutPoint, newCities1, firstCutPoint, secondCutPoint - firstCutPoint);
+        Array.Copy(secondParent.Cities, secondCutPoint, newCities1, secondCutPoint, totalDepth - secondCutPoint);
+
+        // return children
+        Individual offspring1 = new Individual(newCities1);
+        Individual offspring2 = new Individual(newCities2);
+
+        Individual[] children = { offspring1, offspring2 };
+
+        return children;
+    }
+
+
     public static Individual[] onePointCrossover(Individual firstParent, Individual secondParent)
     {
         int totalDepth = firstParent.Cities.Length;
