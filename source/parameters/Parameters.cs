@@ -2,7 +2,7 @@ class Parameters {
 
     // main parameters
     public readonly int POPULATION_SIZE = 100_000;
-    public readonly int TOURNAMENT_SIZE = 3;
+    public readonly int TOURNAMENT_SIZE = 5; 
     public readonly int MAX_GENERATIONS = 100;
 
 
@@ -12,8 +12,8 @@ class Parameters {
 
 
     // selections method - parameters
-    public readonly TournamentMethod TOURNAMENT_METHOD = TournamentMethod.ROULETEE;
-    public readonly CrossoverMethod CROSSOVER_METHOD = CrossoverMethod.TWO_POINT;
+    public readonly TournamentMethod TOURNAMENT_METHOD = TournamentMethod.BEST_RANDOM;
+    public readonly CrossoverMethod CROSSOVER_METHOD = CrossoverMethod.ONE_POINT;
 
 
     public enum TournamentMethod {

@@ -1,3 +1,3 @@
-﻿MainGP mainGP = new MainGP("data\\Dane_TSP_48.csv");
+﻿MainGP mainGP = new MainGP("data\\Dane_TSP_76.csv");
 mainGP.evolve();
 
